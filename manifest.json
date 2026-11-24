@@ -1,0 +1,24 @@
+{
+  "name": "TOMOBILE OPF GROUPE",
+  "short_name": "TOMOBILE",
+  "description": "Application de Tontine Solidaire - Épargne par rotation",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0288D1",
+  "theme_color": "#0288D1",
+  "icons": [
+    {
+      "src": "img/icon.jpg",
+      "sizes": "192x192",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "img/icon.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    }
+  ]
+}

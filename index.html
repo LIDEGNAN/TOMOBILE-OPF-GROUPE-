@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="theme-color" content="#0288D1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="description" content="TOMOBILE OPF GROUPE - Application de Tontine Solidaire">
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" type="image/jpeg" href="img/icon.jpg">
+  <link rel="apple-touch-icon" href="img/icon.jpg">
+  <title>TOMOBILE OPF GROUPE</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <!-- Écran de connexion -->
+  <div id="login-screen" class="screen active">
+    <div class="login-container">
+      <img src="img/icon.jpg" alt="Logo" class="login-logo">
+      <h1>TOMOBILE</h1>
+      <h2>OPF GROUPE</h2>
+      <p class="subtitle">Épargne Solidaire - Tontine</p>
+      <form id="login-form">
+        <div class="form-group">
+          <label for="login-id">Identifiant</label>
+          <input type="text" id="login-id" placeholder="Identifiant mère" required autocomplete="username">
+        </div>
+        <div class="form-group">
+          <label for="login-pass">Mot de passe</label>
+          <input type="password" id="login-pass" placeholder="Mot de passe" required autocomplete="current-password">
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Connexion</button>
+      </form>
+      <p id="login-error" class="error-msg hidden"></p>
+    </div>
+  </div>
+
+  <!-- Application principale -->
+  <div id="app-screen" class="screen">
+    <header class="app-header">
+      <button id="btn-menu" class="btn-icon" aria-label="Menu">☰</button>
+      <div class="header-title">
+        <img src="img/icon.jpg" alt="" class="header-logo">
+        <span>TOMOBILE OPF</span>
+      </div>
+      <button id="btn-logout" class="btn-icon" aria-label="Déconnexion">⏻</button>
+    </header>
+
+    <nav id="side-menu" class="side-menu">
+      <div class="menu-header">
+        <img src="img/icon.jpg" alt="Logo">
+        <div>
+          <strong>TOMOBILE</strong>
+          <small>OPF GROUPE</small>
+        </div>
+      </div>
+      <ul class="menu-list">
+        <li data-page="dashboard"><span class="icon">📊</span> Tableau de bord</li>
+        <li data-page="chefs"><span class="icon">👥</span> Chefs d'équipes</li>
+        <li data-page="participants"><span class="icon">👤</span> Participants</li>
+        <li data-page="cotisations"><span class="icon">💰</span> Cotisations du jour</li>
+        <li data-page="manques"><span class="icon">📅</span> Paiements manqués</li>
+        <li data-page="prets"><span class="icon">🏦</span> Prêts</li>
+        <li data-page="caisses"><span class="icon">🗃️</span> Caisses</li>
+        <li data-page="tours"><span class="icon">🔄</span> Tours & Paramètres</li>
+        <li data-page="historique"><span class="icon">📜</span> Historique / Traçabilité</li>
+        <li data-page="export"><span class="icon">☁️</span> Export / Archives</li>
+      </ul>
+    </nav>
+    <div id="menu-overlay" class="menu-overlay"></div>
+
+    <main id="main-content">
+      <!-- Pages injectées dynamiquement -->
+    </main>
+  </div>
+
+  <!-- Modales génériques -->
+  <div id="modal" class="modal hidden">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 id="modal-title">Titre</h3>
+        <button class="btn-close" id="modal-close">×</button>
+      </div>
+      <div id="modal-body" class="modal-body"></div>
+      <div id="modal-footer" class="modal-footer"></div>
+    </div>
+  </div>
+
+  <div id="toast" class="toast hidden"></div>
+
+  <script src="js/db.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
